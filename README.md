@@ -1,5 +1,5 @@
 ORC忘年会用のJavaScriptビンゴスクリプトです。  
-サンプルは[こちら](http://sifue.github.io/partybingo/)で動かしてみることができます。
+サンプルは[こちら](http://otake-ko.github.io/ORCBingo/)で動かしてみることができます。
 
 ![スクリーンショット](asset/screenshot20241127.png)
 
