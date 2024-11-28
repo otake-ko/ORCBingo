@@ -1,4 +1,4 @@
-結婚式の二次会などで利用できるJavaScriptのビンゴスクリプトです。  
+ORC忘年会用のJavaScriptビンゴスクリプトです。  
 サンプルは[こちら](http://sifue.github.io/partybingo/)で動かしてみることができます。
 
 ![スクリーンショット](asset/screenshot20241127.png)
