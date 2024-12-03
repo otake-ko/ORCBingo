@@ -113,13 +113,26 @@ body {
 }
 #start-button {
   font-size: 50pt;
-  padding: 10px 140px;
+  padding: 10px 160px; /* 横長にするためにパディングを調整 */
   background-color: #007acc; /* ボタン背景色 */
   color: #ffffff; /* ボタンテキスト色 */
 }
 #reset-button {
   font-size: 20pt;
   padding: 37px 20px;
+  background-color: #007acc; /* ボタン背景色 */
+  color: #ffffff; /* ボタンテキスト色 */
+}
+#custom-number {
+  font-size: 20pt;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  display: inline-block;
+}
+#add-number-button {
+  font-size: 20pt;
+  padding: 10px 20px;
   background-color: #007acc; /* ボタン背景色 */
   color: #ffffff; /* ボタンテキスト色 */
 }
@@ -143,4 +156,29 @@ body {
   justify-content: center; /* 数字を中央に揃える */
   align-items: center; /* 数字を中央に揃える */
   width: 80px; /* 固定幅を設定して中央揃えを確実にする */
+}
+#start-button,
+#reset-button,
+#add-number-button,
+#undo-button {
+  background-color: #007acc; /* ボタン背景色 */
+  color: #ffffff; /* ボタンテキスト色 */
+  height: 70px; /* ボタンの高さを統一 */
+  font-size: 20pt; /* フォントサイズを統一 */
+  padding: 10px 20px; /* パディングを統一 */
+}
+
+#undo-button {
+  font-size: 20pt;
+  padding: 10px 20px;
+  background-color: #007acc; /* ボタン背景色 */
+  color: #ffffff; /* ボタンテキスト色 */
+}
+
+#redo-button {
+  background-color: #007acc; /* ボタン背景色 */
+  color: #ffffff; /* ボタンテキスト色 */
+  height: 70px; /* ボタンの高さを統一 */
+  font-size: 20pt; /* フォントサイズを統一 */
+  padding: 10px 20px; /* パディングを統一 */
 }

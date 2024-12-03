@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Party Bingo!</title>
+  <title>ORC Bingo</title>
 
   <!-- Bootstrap -->
   <link href="asset/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,8 +26,11 @@
     <div id="buttons">
       <button id="start-button" class="btn btn-lg btn-default">Start</button>
       <button id="reset-button" class="btn btn-lg btn-default">Reset</button>
-      </div>
-    <h3>Histories</h3>
+      <input type="number" id="custom-number" min="1" max="110" class="form-control">
+      <button id="add-number-button" class="btn btn-lg btn-default">Add</button>
+      <button id="undo-button" class="btn btn-lg btn-default">Undo</button>
+      <button id="redo-button" class="btn btn-lg btn-default">Redo</button>
+    </div>
     <div id="histories" class="row histories"></div>
 
     <audio id="drum" preload="auto">

@@ -4,6 +4,11 @@
 	var resetButton = $('#reset-button');
 	var historiesDiv = $('#histories');
 	var drumAudio = $('#drum').get(0);
+	var customNumberInput = $('#custom-number');
+	var addNumberButton = $('#add-number-button');
+	var undoButton = $('#undo-button');
+	var redoButton = $('#redo-button');
+	var redoStack = [];
 	
 	// init histories
 	var toBingoString = function(n){
@@ -16,7 +21,9 @@
 		}
 	};
 	var addHistory = function(n) {
-		historiesDiv.append('<div class="col-md-1"><p class="history-number">' + toBingoString(n) + '</p></div>');
+		if (!historiesDiv.find('.history-number').filter(function() { return $(this).text() === toBingoString(n); }).length) {
+			historiesDiv.append('<div class="col-md-1"><p class="history-number">' + toBingoString(n) + '</p></div>');
+		}
 	};
 	
 	// init number list and storage
@@ -122,5 +129,69 @@
 		}
 	};
 	resetButton.click(resetClicked);
+
+	var addCustomNumber = function() {
+		var customNumber = parseInt(customNumberInput.val(), 10);
+		if (isNaN(customNumber) || customNumber < 1 || customNumber > maxNumber) {
+			alert('1~110の数値を入力してください');
+			return;
+		}
+		var numberList = getNumberList();
+		var removedList = getRemovedList();
+		if (removedList.includes(customNumber)) {
+			alert('既に出た数字です');
+			return;
+		}
+		if (!numberList.includes(customNumber)) {
+			numberList.push(customNumber);
+			setNumberList(numberList);
+		}
+		addHistory(customNumber);
+		customNumberInput.val('');
+	};
+
+	addNumberButton.click(addCustomNumber);
+
+	var undoLastAction = function() {
+		if (confirm('本当に元に戻しますか？')) {
+			var removedList = getRemovedList();
+			if (removedList.length === 0) {
+				alert('No actions to undo');
+				return;
+			}
+			var lastRemoved = removedList.pop();
+			redoStack.push(lastRemoved);
+			setRemovedList(removedList);
+
+			var numberList = getNumberList();
+			numberList.push(lastRemoved);
+			setNumberList(numberList);
+
+			historiesDiv.find('.history-number').last().parent().remove();
+			pingoNumber.text(toBingoString(lastRemoved));
+		}
+	};
+
+	var redoLastAction = function() {
+		if (redoStack.length === 0) {
+			alert('No actions to redo');
+			return;
+		}
+		var lastRedo = redoStack.pop();
+		var numberList = getNumberList();
+		var removedList = getRemovedList();
+
+		numberList.splice(numberList.indexOf(lastRedo), 1);
+		removedList.push(lastRedo);
+
+		setNumberList(numberList);
+		setRemovedList(removedList);
+
+		addHistory(lastRedo);
+		pingoNumber.text(toBingoString(lastRedo));
+	};
+
+	undoButton.click(undoLastAction);
+	redoButton.click(redoLastAction);
 	
 })();
