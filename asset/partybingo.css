@@ -13,10 +13,10 @@ a:hover {
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-  color: #333;
+  color: #d4d4d4; /* テキスト色を明るいグレーに変更 */
   text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
+  background-color: #1e1e1e; /* 背景色をダークグレーに変更 */
+  border: 1px solid #1e1e1e; /* ボーダー色をダークグレーに変更 */
 }
 
 /*
@@ -26,12 +26,12 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  background-color: #1e1e1e; /* 背景色をダークグレーに変更 */
 }
 body {
-  color: #fff;
+  color: #d4d4d4; /* テキスト色を明るいグレーに変更 */
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  text-shadow: 0 1px 3px rgba(0,0,0,.5); /* テキストシャドウを暗く */
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -108,20 +108,39 @@ body {
  * Party Bingo
  */
 #pingo-number {
-  font-size: 240pt
+  font-size: 140pt; /* フォントサイズ */
+  color: #d4d4d4; /* テキスト色 */
 }
 #start-button {
-  font-size: 60pt;
-  padding: 10px 140px
+  font-size: 50pt;
+  padding: 10px 140px;
+  background-color: #007acc; /* ボタン背景色 */
+  color: #ffffff; /* ボタンテキスト色 */
 }
 #reset-button {
-  font-size: 16pt;
-  padding: 49px 10px
+  font-size: 20pt;
+  padding: 37px 20px;
+  background-color: #007acc; /* ボタン背景色 */
+  color: #ffffff; /* ボタンテキスト色 */
 }
 .histories {
-  width: 90%
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* 左揃えに変更 */
+  align-items: center; /* 数字を中央に揃える */
+  margin: 0 auto; /* コンテナを中央に配置 */
+  max-height: 300px; /* 表示領域の高さ制限 */
+  overflow-y: auto; /* 縦方向にスクロール可能にする */
+  overflow-x: hidden; /* 横方向のオーバーフローを非表示にする */
+  scrollbar-color: #555 #1e1e1e; /* スクロールバーの色 */
 }
 .history-number {
   font-size: 40pt;
-  margin: 5px 40px
+  margin: 10px 20px; /* マージンを調整 */
+  color: #d4d4d4; /* テキスト色 */
+  display: flex;
+  justify-content: center; /* 数字を中央に揃える */
+  align-items: center; /* 数字を中央に揃える */
+  width: 80px; /* 固定幅を設定して中央揃えを確実にする */
 }

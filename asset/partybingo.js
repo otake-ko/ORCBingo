@@ -113,7 +113,7 @@
 	
 	// init reset button
 	var resetClicked = function() {
-		if (confirm('Do you really want to reset?')) {
+		if (confirm('本当にリセットしますか？')) {
 			resetLists();
 			pingoNumber.text('00');
 			historiesDiv.empty();
