@@ -1,7 +1,7 @@
 ORC忘年会用のJavaScriptビンゴスクリプトです。  
 サンプルは[こちら](http://otake-ko.github.io/ORCBingo/)で動かしてみることができます。
 
-![スクリーンショット](asset/screenshot20241127.png)
+![スクリーンショット](asset/20241203ScreenShot.png)
 
 ### 使い方
 zipファイルを解凍後、index.htmlをブラウザで開くことで使うことができます。  
