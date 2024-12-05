@@ -156,7 +156,7 @@
 		if (confirm('本当に元に戻しますか？')) {
 			var removedList = getRemovedList();
 			if (removedList.length === 0) {
-				alert('No actions to undo');
+				alert('取り消す動作がありません');
 				return;
 			}
 			var lastRemoved = removedList.pop();
@@ -174,7 +174,7 @@
 
 	var redoLastAction = function() {
 		if (redoStack.length === 0) {
-			alert('No actions to redo');
+			alert('やり直す動作がありません');
 			return;
 		}
 		var lastRedo = redoStack.pop();
