@@ -108,7 +108,7 @@ body {
  * Party Bingo
  */
 #pingo-number {
-  font-size: 140pt; /* フォントサイズ */
+  font-size: 160pt; /* フォントサイズ */
   color: #d4d4d4; /* テキスト色 */
 }
 #start-button {
@@ -137,7 +137,7 @@ body {
   color: #ffffff; /* ボタンテキスト色 */
 }
 .histories {
-  width: 90%;
+  width: 100%; /* 幅を100%に変更 */
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start; /* 左揃えに変更 */
@@ -146,7 +146,8 @@ body {
   max-height: 300px; /* 表示領域の高さ制限 */
   overflow-y: auto; /* 縦方向にスクロール可能にする */
   overflow-x: hidden; /* 横方向のオーバーフローを非表示にする */
-  scrollbar-color: #555 #1e1e1e; /* スクロールバーの色 */
+  scrollbar-color: #1e1e1e #1e1e1e; /* スクロールバーの色を背景色と同じにする */
+  padding-right: 20px; /* 右端に余白を追加 */
 }
 .history-number {
   font-size: 40pt;
