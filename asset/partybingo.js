@@ -22,7 +22,7 @@
 	};
 	var addHistory = function(n) {
 		if (!historiesDiv.find('.history-number').filter(function() { return $(this).text() === toBingoString(n); }).length) {
-			historiesDiv.prepend('<div class="col-md-1"><p class="history-number">' + toBingoString(n) + '</p></div>');
+			historiesDiv.append('<div class="col-md-1"><p class="history-number">' + toBingoString(n) + '</p></div>');
 		}
 	};
 	
