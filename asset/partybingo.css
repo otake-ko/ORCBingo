@@ -174,11 +174,3 @@ body {
   background-color: #007acc; /* ボタン背景色 */
   color: #ffffff; /* ボタンテキスト色 */
 }
-
-#redo-button {
-  background-color: #007acc; /* ボタン背景色 */
-  color: #ffffff; /* ボタンテキスト色 */
-  height: 70px; /* ボタンの高さを統一 */
-  font-size: 20pt; /* フォントサイズを統一 */
-  padding: 10px 20px; /* パディングを統一 */
-}

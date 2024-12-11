@@ -7,8 +7,6 @@
 	var customNumberInput = $('#custom-number');
 	var addNumberButton = $('#add-number-button');
 	var undoButton = $('#undo-button');
-	var redoButton = $('#redo-button');
-	var redoStack = [];
 	
 	// init histories
 	var toBingoString = function(n){
@@ -28,7 +26,7 @@
 	
 	// init number list and storage
 	var numberListAll = [];
-	var maxNumber = 110;
+	var maxNumber = 105;
 	for(var num = 1; num <= maxNumber; num++) {
 		numberListAll.push(num);
 	}
@@ -120,7 +118,7 @@
 	
 	// init reset button
 	var resetClicked = function() {
-		if (confirm('本当にリセットしますか？')) {
+		if (confirm('本当にリセットし��すか？')) {
 			resetLists();
 			pingoNumber.text('00');
 			historiesDiv.empty();
@@ -160,38 +158,19 @@
 				return;
 			}
 			var lastRemoved = removedList.pop();
-			redoStack.push(lastRemoved);
 			setRemovedList(removedList);
 
 			var numberList = getNumberList();
-			numberList.push(lastRemoved);
+			numberList.unshift(lastRemoved); // 直近のものをリストの先頭に戻す
 			setNumberList(numberList);
 
-			historiesDiv.find('.history-number').last().parent().remove();
+			historiesDiv.find('.history-number').filter(function() {
+				return $(this).text() === toBingoString(lastRemoved);
+			}).first().parent().remove(); // 直近の履歴を削除
 			pingoNumber.text(toBingoString(lastRemoved));
 		}
 	};
 
-	var redoLastAction = function() {
-		if (redoStack.length === 0) {
-			alert('やり直す動作がありません');
-			return;
-		}
-		var lastRedo = redoStack.pop();
-		var numberList = getNumberList();
-		var removedList = getRemovedList();
-
-		numberList.splice(numberList.indexOf(lastRedo), 1);
-		removedList.push(lastRedo);
-
-		setNumberList(numberList);
-		setRemovedList(removedList);
-
-		addHistory(lastRedo);
-		pingoNumber.text(toBingoString(lastRedo));
-	};
-
 	undoButton.click(undoLastAction);
-	redoButton.click(redoLastAction);
 	
 })();
