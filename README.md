@@ -1,7 +1,7 @@
 ORC忘年会用のJavaScriptビンゴスクリプトです。  
 サンプルは[こちら](http://otake-ko.github.io/ORCBingo/)で動かしてみることができます。
 
-![スクリーンショット](asset/20241203ScreenShot.png)
+![スクリーンショット](asset/image.png)
 
 ### 使い方
 7×7のビンゴ用に、1~110の範囲でビンゴゲームを行います。
