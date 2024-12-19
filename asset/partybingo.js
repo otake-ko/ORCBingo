@@ -118,7 +118,7 @@
 	
 	// init reset button
 	var resetClicked = function() {
-		if (confirm('本当にリセットし��すか？')) {
+		if (confirm('本当にリセットしますか？')) {
 			resetLists();
 			pingoNumber.text('00');
 			historiesDiv.empty();
@@ -136,15 +136,17 @@
 		}
 		var numberList = getNumberList();
 		var removedList = getRemovedList();
-		if (removedList.includes(customNumber)) {
+		if (removedList.includes(customNumber) || !numberList.includes(customNumber)) {
 			alert('既に出た数字です');
 			return;
 		}
-		if (!numberList.includes(customNumber)) {
-			numberList.push(customNumber);
-			setNumberList(numberList);
-		}
+		// カスタム番号をリストから削除して履歴に追加
+		numberList.splice(numberList.indexOf(customNumber), 1);
+		setNumberList(numberList);
+		removedList.push(customNumber);
+		setRemovedList(removedList);
 		addHistory(customNumber);
+		pingoNumber.text(toBingoString(customNumber)); // 大きく表示される数字に表示
 		customNumberInput.val('');
 	};
 
