@@ -131,7 +131,7 @@
 	var addCustomNumber = function() {
 		var customNumber = parseInt(customNumberInput.val(), 10);
 		if (isNaN(customNumber) || customNumber < 1 || customNumber > maxNumber) {
-			alert('1~110の数値を入力してください');
+			alert('1~105の数値を入力してください');
 			return;
 		}
 		var numberList = getNumberList();
